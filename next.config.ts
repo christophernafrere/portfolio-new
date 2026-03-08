@@ -5,7 +5,6 @@ const nextConfig: NextConfig = {
         styledComponents: true,
     },
     reactCompiler: true,
-    output: "export",
 };
 
 export default nextConfig;

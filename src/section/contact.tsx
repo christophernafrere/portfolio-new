@@ -1,22 +1,43 @@
+"use client";
 import colors from "@/lib/color";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { GithubIcon, LinkedinIcon, ZapIcon } from "lucide-react";
 export default function Contact() {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
     return (
         <section>
             <h2 style={{ marginBottom: "16px" }}>[COMM_LINK: CONTACT]</h2>
 
             <Container>
-                <Form>
+                <Form
+                    onSubmit={async (e) => {
+                        e.preventDefault();
+                        const data = await fetch("/api/contact", {
+                            method: "post",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({
+                                name,
+                                email,
+                                message,
+                            }),
+                        });
+                    }}>
                     <label>
                         NOM DU PILOTE
-                        <input type="text" placeholder="NOM DU PILOTE" />
+                        <input
+                            onChange={(e) => setName(e.target.value)}
+                            type="text"
+                            placeholder="NOM DU PILOTE"
+                        />
                     </label>
 
                     <label>
                         FREQUENCE_COMMS
                         <input
+                            onChange={(e) => setEmail(e.target.value)}
                             type="text"
                             placeholder="JOHN.DOE@PROTOCOLE.COM"
                         />
@@ -24,7 +45,10 @@ export default function Contact() {
 
                     <label>
                         CHARGE_UTILE
-                        <textarea placeholder="ENTRER MESSAGE CHIFFRE..." />
+                        <textarea
+                            onChange={(e) => setMessage(e.target.value)}
+                            placeholder="ENTRER MESSAGE CHIFFRE..."
+                        />
                     </label>
 
                     <button>
@@ -109,6 +133,7 @@ const Form = styled.form`
         background-color: rgba(16, 16, 34, 80%);
         border: 1px solid rgba(${colors.primary.blue});
         padding: 8px;
+        color: white;
     }
 
     textarea {
