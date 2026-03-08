@@ -1,20 +1,24 @@
 "use client";
 import styled from "styled-components";
-
-import React from "react";
 import colors from "@/lib/color";
 
 export default function HeroHeader() {
     return (
-        <HeroHeaderContainer>
-            <CockpitImg src="/images/cockpit.webp" alt="gundam-cockpit" />
-            <Frame>
-                <TextContainer>
-                    <p>STATUS: ONLINE</p>
-                    <h2>MOBILE SUIT : DEV-01</h2>
-                </TextContainer>
-            </Frame>
-        </HeroHeaderContainer>
+        <>
+            <HeroHeaderContainer>
+                <CockpitImg src="/images/cockpit.webp" alt="gundam-cockpit" />
+                <Frame>
+                    <TextContainer>
+                        <p>STATUS: ONLINE</p>
+                        <h2>
+                            <span>MOBILE SUIT :</span>
+                            <br />
+                            Christopher Nafrere
+                        </h2>
+                    </TextContainer>
+                </Frame>
+            </HeroHeaderContainer>
+        </>
     );
 }
 
@@ -26,6 +30,10 @@ const HeroHeaderContainer = styled.section`
     box-sizing: border-box;
     border-radius: 4px;
     overflow: hidden;
+
+    @media (min-width: 800px) {
+        height: 80vh;
+    }
 `;
 
 const Frame = styled.article`
@@ -71,18 +79,32 @@ const TextContainer = styled.div`
     width: 90%;
     background-color: rgba(${colors.primary.blue}, 80%);
     clip-path: polygon(0 0, 75% 0, 100% 100%, 0% 100%);
+    backdrop-filter: blur(4px);
     border-radius: 8px;
 
     h2 {
         font-size: 1.35rem;
+
+        span {
+            font-size: 1rem;
+        }
+
+        @media (min-width: 800px) {
+            font-size: 4rem;
+        }
     }
 
     p {
         font-size: 0.8rem;
         color: rgba(${colors.primary.yellow});
+
+        @media (min-width: 800px) {
+            font-size: 1.3rem;
+        }
     }
 `;
 const CockpitImg = styled.img`
     width: 100%;
     height: 100%;
+    object-fit: cover;
 `;

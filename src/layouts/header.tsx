@@ -5,7 +5,7 @@ import styled from "styled-components";
 export default function Header() {
     return (
         <HeaderContainer>
-            <h1>RX-Christopher</h1>
+            <h1>RX-NAF</h1>
         </HeaderContainer>
     );
 }

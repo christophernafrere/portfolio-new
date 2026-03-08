@@ -10,8 +10,16 @@ const GlobalStyle = createGlobalStyle`
         font-family: var("--font-space-grotesk");
     }
 
-    h1, h2, h3, h4, h5, h6, p {
+    button {
+        font-family: var("--font-space-grotesk");
+    }
+
+    
+
+     p {
         margin: 0;
+        line-height: 1.3rem;
+        letter-spacing: 0.05rem;
     }
 `;
 
