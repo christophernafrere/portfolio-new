@@ -33,6 +33,37 @@ export default function DeploymentHistory() {
                         </button>
                     </DeploymentData>
                 </DeploymentItem>
+
+                <DeploymentItem>
+                    <DeploymentData>
+                        <p className="version">Project 1.0.1</p>
+                        <h3>DKtiv</h3>
+                        <p className="description">
+                            D-KTIV est une application qui transforme la marche
+                            ou la course en missions solidaires, en connectant
+                            les utilisateurs avec des associations locales pour
+                            encourager à la fois l&apos;activité physique et
+                            l&apos;engagement bénévole.
+                        </p>
+                        <button
+                            onClick={() =>
+                                window.open(
+                                    "https://dktiv.christopher-nafrere.fr/",
+                                )
+                            }>
+                            EXECUTE VIEW
+                        </button>
+
+                        <button
+                            onClick={() =>
+                                window.open(
+                                    "https://github.com/christophernafrere/dktiv-re",
+                                )
+                            }>
+                            VIEW SOURCE CODE
+                        </button>
+                    </DeploymentData>
+                </DeploymentItem>
             </DeploymentList>
         </section>
     );
