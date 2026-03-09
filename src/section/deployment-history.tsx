@@ -80,9 +80,7 @@ export default function DeploymentHistory() {
                         </p>
                         <button
                             onClick={() =>
-                                window.open(
-                                    "https://dktiv.christopher-nafrere.fr/",
-                                )
+                                window.open("https://www.meal-in-sight.fr")
                             }>
                             EXECUTE VIEW
                         </button>
@@ -90,7 +88,7 @@ export default function DeploymentHistory() {
                         <button
                             onClick={() =>
                                 window.open(
-                                    "https://github.com/christophernafrere/dktiv-re",
+                                    "https://github.com/christophernafrere/meal-in-sight",
                                 )
                             }>
                             VIEW SOURCE CODE
