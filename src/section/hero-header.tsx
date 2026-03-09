@@ -84,6 +84,7 @@ const TextContainer = styled.div`
 
     h2 {
         font-size: 1.35rem;
+        margin: 0;
 
         span {
             font-size: 1rem;
