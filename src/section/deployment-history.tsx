@@ -64,6 +64,39 @@ export default function DeploymentHistory() {
                         </button>
                     </DeploymentData>
                 </DeploymentItem>
+
+                <DeploymentItem>
+                    <DeploymentData>
+                        <p className="version">Project 1.0.1</p>
+                        <h3>Meal In Sight</h3>
+                        <p className="description">
+                            Meal in Sight est une application web dédiée à la
+                            gestion et à la visualisation de repas. Le projet
+                            repose sur un back-end Node.js avec Prisma et une
+                            base de données PostgreSQL, le tout orchestré avec
+                            Docker pour faciliter le déploiement et la
+                            reproductibilité de l&apos;environnement de
+                            développement.
+                        </p>
+                        <button
+                            onClick={() =>
+                                window.open(
+                                    "https://dktiv.christopher-nafrere.fr/",
+                                )
+                            }>
+                            EXECUTE VIEW
+                        </button>
+
+                        <button
+                            onClick={() =>
+                                window.open(
+                                    "https://github.com/christophernafrere/dktiv-re",
+                                )
+                            }>
+                            VIEW SOURCE CODE
+                        </button>
+                    </DeploymentData>
+                </DeploymentItem>
             </DeploymentList>
         </section>
     );
