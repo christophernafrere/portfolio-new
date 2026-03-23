@@ -1,12 +1,21 @@
-"use client";
+import type { Metadata } from "next";
 import Header from "@/layouts/header";
 import colors from "@/lib/color";
+import { siteConfig } from "@/lib/seo";
 import Contact from "@/section/contact";
 import DeploymentHistory from "@/section/deployment-history";
 import Engagement from "@/section/engagement";
 import HeroHeader from "@/section/hero-header";
 import Skills from "@/section/skills";
 import styled from "styled-components";
+
+export const metadata: Metadata = {
+    title: siteConfig.title,
+    description: siteConfig.description,
+    alternates: {
+        canonical: "/",
+    },
+};
 
 export default function Home() {
     return (

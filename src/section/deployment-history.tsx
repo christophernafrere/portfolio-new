@@ -1,13 +1,11 @@
 "use client";
-import ChipIcon from "@/icons/chip-icon";
 import MissionIcon from "@/icons/mission-icon";
 import colors from "@/lib/color";
-import React from "react";
 import styled from "styled-components";
 
 export default function DeploymentHistory() {
     return (
-        <section>
+        <section id="projects" aria-label="Projets déployés">
             <TitleSection>
                 <MissionIcon />
                 DEPLOYMENT_HISTORY
@@ -25,12 +23,12 @@ export default function DeploymentHistory() {
                             réalisations et permet aux clients potentiels de
                             prendre contact facilement.
                         </p>
-                        <button
-                            onClick={() =>
-                                window.open("https://www.bjmultirenov.fr")
-                            }>
+                        <ProjectLink
+                            href="https://www.bjmultirenov.fr"
+                            target="_blank"
+                            rel="noopener noreferrer">
                             EXECUTE VIEW
-                        </button>
+                        </ProjectLink>
                     </DeploymentData>
                 </DeploymentItem>
 
@@ -45,23 +43,19 @@ export default function DeploymentHistory() {
                             encourager à la fois l&apos;activité physique et
                             l&apos;engagement bénévole.
                         </p>
-                        <button
-                            onClick={() =>
-                                window.open(
-                                    "https://dktiv.christopher-nafrere.fr/",
-                                )
-                            }>
+                        <ProjectLink
+                            href="https://dktiv.christopher-nafrere.fr/"
+                            target="_blank"
+                            rel="noopener noreferrer">
                             EXECUTE VIEW
-                        </button>
+                        </ProjectLink>
 
-                        <button
-                            onClick={() =>
-                                window.open(
-                                    "https://github.com/christophernafrere/dktiv-re",
-                                )
-                            }>
+                        <ProjectLink
+                            href="https://github.com/christophernafrere/dktiv-re"
+                            target="_blank"
+                            rel="noopener noreferrer">
                             VIEW SOURCE CODE
-                        </button>
+                        </ProjectLink>
                     </DeploymentData>
                 </DeploymentItem>
 
@@ -78,21 +72,19 @@ export default function DeploymentHistory() {
                             reproductibilité de l&apos;environnement de
                             développement.
                         </p>
-                        <button
-                            onClick={() =>
-                                window.open("https://www.meal-in-sight.fr")
-                            }>
+                        <ProjectLink
+                            href="https://www.meal-in-sight.fr"
+                            target="_blank"
+                            rel="noopener noreferrer">
                             EXECUTE VIEW
-                        </button>
+                        </ProjectLink>
 
-                        <button
-                            onClick={() =>
-                                window.open(
-                                    "https://github.com/christophernafrere/meal-in-sight",
-                                )
-                            }>
+                        <ProjectLink
+                            href="https://github.com/christophernafrere/meal-in-sight"
+                            target="_blank"
+                            rel="noopener noreferrer">
                             VIEW SOURCE CODE
-                        </button>
+                        </ProjectLink>
                     </DeploymentData>
                 </DeploymentItem>
             </DeploymentList>
@@ -128,7 +120,7 @@ const DeploymentItem = styled.li`
     &:nth-child(3n + 1) {
         border-left: 4px solid rgba(${colors.primary.blue});
         color: rgba(${colors.primary.blue});
-        button {
+        a {
             border: 1px solid rgba(${colors.primary.blue});
             background-color: rgba(${colors.primary.blue}, 20%);
             color: rgba(${colors.primary.blue});
@@ -138,7 +130,7 @@ const DeploymentItem = styled.li`
     &:nth-child(3n + 2) {
         border-left: 4px solid rgba(${colors.primary.red});
         color: rgba(${colors.primary.red});
-        button {
+        a {
             border: 1px solid rgba(${colors.primary.red}, 20%);
             background-color: rgba(${colors.primary.red}, 20%);
             color: rgba(${colors.primary.red});
@@ -148,14 +140,19 @@ const DeploymentItem = styled.li`
     &:nth-child(3n + 3) {
         border-left: 4px solid rgba(${colors.primary.yellow});
         color: rgba(${colors.primary.yellow});
-        button {
+        a {
             border: 1px solid rgba(${colors.primary.yellow}, 20%);
             background-color: rgba(${colors.primary.yellow}, 20%);
             color: rgba(${colors.primary.yellow});
         }
     }
 
-    button {
+    a {
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        margin-right: 8px;
+        margin-top: 8px;
         cursor: pointer;
         padding: 8px;
     }
@@ -172,6 +169,5 @@ const DeploymentData = styled.div`
         margin-bottom: 16px;
     }
 `;
-const DeploymentPreview = styled.img`
-    flex: 1;
-`;
+
+const ProjectLink = styled.a``;

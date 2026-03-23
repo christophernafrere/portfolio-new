@@ -8,14 +8,14 @@ export default function Contact() {
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
     return (
-        <section>
+        <section id="contact" aria-label="Contact">
             <h2 style={{ marginBottom: "16px" }}>[COMM_LINK: CONTACT]</h2>
 
             <Container>
                 <Form
                     onSubmit={async (e) => {
                         e.preventDefault();
-                        const data = await fetch("/api/contact", {
+                        await fetch("/api/contact", {
                             method: "post",
                             headers: { "Content-Type": "application/json" },
                             body: JSON.stringify({
@@ -30,6 +30,9 @@ export default function Contact() {
                         <input
                             onChange={(e) => setName(e.target.value)}
                             type="text"
+                            name="name"
+                            autoComplete="name"
+                            required
                             placeholder="NOM DU PILOTE"
                         />
                     </label>
@@ -38,7 +41,10 @@ export default function Contact() {
                         FREQUENCE_COMMS
                         <input
                             onChange={(e) => setEmail(e.target.value)}
-                            type="text"
+                            type="email"
+                            name="email"
+                            autoComplete="email"
+                            required
                             placeholder="JOHN.DOE@PROTOCOLE.COM"
                         />
                     </label>
@@ -47,6 +53,8 @@ export default function Contact() {
                         CHARGE_UTILE
                         <textarea
                             onChange={(e) => setMessage(e.target.value)}
+                            name="message"
+                            required
                             placeholder="ENTRER MESSAGE CHIFFRE..."
                         />
                     </label>
@@ -62,27 +70,23 @@ export default function Contact() {
 
                         <RSList>
                             <RSCard
-                                onClick={() =>
-                                    window.open(
-                                        "http://www.linkedin.fr/in/christopher-nafrere",
-                                    )
-                                }>
+                                href="https://www.linkedin.com/in/christopher-nafrere"
+                                target="_blank"
+                                rel="noopener noreferrer">
                                 <LinkedinIcon size={48} />
                                 <div>
                                     <h4>Linkedin</h4>
-                                    <p>// id_profil: rx_naf</p>
+                                    <p>{"// id_profil: rx_naf"}</p>
                                 </div>
                             </RSCard>
                             <RSCard
-                                onClick={() =>
-                                    window.open(
-                                        "https://github.com/christophernafrere",
-                                    )
-                                }>
+                                href="https://github.com/christophernafrere"
+                                target="_blank"
+                                rel="noopener noreferrer">
                                 <GithubIcon size={48} />
                                 <div>
                                     <h4>Github</h4>
-                                    <p>// accès_repo: accordé</p>
+                                    <p>{"// accès_repo: accordé"}</p>
                                 </div>
                             </RSCard>
                         </RSList>
@@ -175,13 +179,15 @@ const RSList = styled.div`
     gap: 8px;
 `;
 
-const RSCard = styled.div`
+const RSCard = styled.a`
     border: 1px solid #222249;
     padding: 8px;
     background-color: rgba(16, 16, 34, 50%);
     display: flex;
     align-items: center;
     gap: 16px;
+    text-decoration: none;
+    color: inherit;
 
     border-radius: 2px;
     div {

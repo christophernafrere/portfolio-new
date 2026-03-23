@@ -9,16 +9,16 @@ import styled from "styled-components";
 
 export default function Engagement() {
     return (
-        <Section>
+        <Section id="engagement" aria-label="Engagement associatif">
             <TitleSection>
                 <EngagementIcon />
                 ENGAGEMENT.SOC
             </TitleSection>
-            <h2>
+            <h3>
                 <a href="https://www.ladndespetitsgenies.fr/">
-                    L'@dn des petits génie
+                    L&apos;@dn des petits génies
                 </a>
-            </h2>
+            </h3>
             <p>
                 Bénévole au sein de l&apos;association L&apos;@DN des Petits
                 Génies, où j&apos;interviens lors d&apos;ateliers

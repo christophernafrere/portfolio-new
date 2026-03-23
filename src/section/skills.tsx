@@ -10,7 +10,7 @@ import styled from "styled-components";
 
 export default function Skills() {
     return (
-        <section>
+        <section id="skills" aria-label="Compétences techniques">
             <TitleSection>
                 <ChipIcon /> SYSTEM.CAPACILITIES[ ]
             </TitleSection>

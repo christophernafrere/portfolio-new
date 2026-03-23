@@ -5,8 +5,11 @@ import colors from "@/lib/color";
 export default function HeroHeader() {
     return (
         <>
-            <HeroHeaderContainer>
-                <CockpitImg src="/images/cockpit.webp" alt="gundam-cockpit" />
+            <HeroHeaderContainer id="hero" aria-label="Présentation principale">
+                <CockpitImg
+                    src="/images/cockpit.webp"
+                    alt="Cockpit Gundam illustrant le portfolio de Christopher Nafrere"
+                />
                 <Frame>
                     <TextContainer>
                         <p>STATUS: ONLINE</p>
