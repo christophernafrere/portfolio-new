@@ -4,6 +4,48 @@ import colors from "@/lib/color";
 import styled from "styled-components";
 
 export default function DeploymentHistory() {
+    const deployments = [
+        {
+            name: "climb-bro",
+            version: "1.0.1",
+            description:
+                "Plateforme de mise en relation pour grimpeurs permettant de trouver des partenaires d'escalade et d'organiser facilement des sessions en salle.",
+            github: "https://github.com/christophernafrere/climb-bro",
+            link: "https://dev.climb-bro.fr",
+        },
+        {
+            name: "instant-present",
+            version: "1.0.1",
+            description:
+                "Plateforme de rencontres par activités réelles intégrant réservation d'événements, gestion des participants et administration complète.",
+            github: "https://github.com/christophernafrere/instant-present",
+            link: null,
+        },
+        {
+            name: "BJ Multi Renov",
+            version: "1.255.1",
+            description:
+                "Landing page développée pour une entreprise de rénovation afin de présenter ses services et améliorer sa présence en ligne.",
+            github: "https://github.com/christophernafrere/bj-multi-renov",
+            link: "https://www.bjmultirenov.fr/",
+        },
+        {
+            name: "DKtiv",
+            version: "1.0.1",
+            description:
+                "D-KTIV est une application qui transforme la marche ou la course en missions solidaires, en connectant les utilisateurs avec des associations locales pour encourager à la fois l'activité physique et l'engagement bénévole.",
+            github: "https://github.com/christophernafrere/dktiv-re",
+            link: null,
+        },
+        {
+            name: "Meal In Sight",
+            version: "1.0.1",
+            description:
+                "Meal in Sight est une application web dédiée à la gestion et à la visualisation de repas. Le projet repose sur un back-end Node.js avec Prisma et une base de données PostgreSQL, le tout orchestré avec Docker pour faciliter le déploiement et la reproductibilité de l'environnement de développement.",
+            github: "https://github.com/christophernafrere/meal-in-sight",
+            link: null,
+        },
+    ];
     return (
         <section id="projects" aria-label="Projets déployés">
             <TitleSection>
@@ -11,82 +53,31 @@ export default function DeploymentHistory() {
                 DEPLOYMENT_HISTORY
             </TitleSection>
             <DeploymentList>
-                <DeploymentItem>
-                    <DeploymentData>
-                        <p className="version">Project 1.255.1</p>
-                        <h3>BJ Multi Renov</h3>
-                        <p className="description">
-                            Landing page développée pour une entreprise de
-                            rénovation afin de présenter ses services et
-                            améliorer sa présence en ligne. Le site met en avant
-                            les prestations de l&apos;entreprise, ses
-                            réalisations et permet aux clients potentiels de
-                            prendre contact facilement.
-                        </p>
-                        <ProjectLink
-                            href="https://www.bjmultirenov.fr"
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            EXECUTE VIEW
-                        </ProjectLink>
-                    </DeploymentData>
-                </DeploymentItem>
-
-                <DeploymentItem>
-                    <DeploymentData>
-                        <p className="version">Project 1.0.1</p>
-                        <h3>DKtiv</h3>
-                        <p className="description">
-                            D-KTIV est une application qui transforme la marche
-                            ou la course en missions solidaires, en connectant
-                            les utilisateurs avec des associations locales pour
-                            encourager à la fois l&apos;activité physique et
-                            l&apos;engagement bénévole.
-                        </p>
-                        <ProjectLink
-                            href="https://dktiv.christopher-nafrere.fr/"
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            EXECUTE VIEW
-                        </ProjectLink>
-
-                        <ProjectLink
-                            href="https://github.com/christophernafrere/dktiv-re"
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            VIEW SOURCE CODE
-                        </ProjectLink>
-                    </DeploymentData>
-                </DeploymentItem>
-
-                <DeploymentItem>
-                    <DeploymentData>
-                        <p className="version">Project 1.0.1</p>
-                        <h3>Meal In Sight</h3>
-                        <p className="description">
-                            Meal in Sight est une application web dédiée à la
-                            gestion et à la visualisation de repas. Le projet
-                            repose sur un back-end Node.js avec Prisma et une
-                            base de données PostgreSQL, le tout orchestré avec
-                            Docker pour faciliter le déploiement et la
-                            reproductibilité de l&apos;environnement de
-                            développement.
-                        </p>
-                        <ProjectLink
-                            href="https://www.meal-in-sight.fr"
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            EXECUTE VIEW
-                        </ProjectLink>
-
-                        <ProjectLink
-                            href="https://github.com/christophernafrere/meal-in-sight"
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            VIEW SOURCE CODE
-                        </ProjectLink>
-                    </DeploymentData>
-                </DeploymentItem>
+                {deployments.map((deployment, index) => (
+                    <DeploymentItem key={index}>
+                        <DeploymentData>
+                            <p className="version">{`Project ${deployment.version}`}</p>
+                            <h3>{deployment.name}</h3>
+                            <p className="description">
+                                {deployment.description}
+                            </p>
+                            {deployment.link && (
+                                <ProjectLink
+                                    href={deployment.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer">
+                                    EXECUTE VIEW
+                                </ProjectLink>
+                            )}
+                            <ProjectLink
+                                href={deployment.github}
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                VIEW SOURCE CODE
+                            </ProjectLink>
+                        </DeploymentData>
+                    </DeploymentItem>
+                ))}
             </DeploymentList>
         </section>
     );

@@ -1,5 +1,5 @@
 export const siteConfig = {
-    siteUrl: "https://christopher-nafrere.fr",
+    siteUrl: "https://mecha.christopher-nafrere.fr",
     siteName: "Portfolio Christopher Nafrere",
     title: "Christopher Nafrere | Développeur Fullstack Next.js & NestJS",
     description:
